@@ -1,10 +1,14 @@
+#Firstly create a graph on pixela
+#API Doc: "https://docs.pixe.la"
+
+
 import requests
 import datetime
 pixela_endpoint = "https://pixe.la/v1/users"
-USERNAME = "korede"
+USERNAME = "USERNAME"
 GRAPH1 = "graph1"
-TOKEN = "hnfjicnednnfkwen"
-parameters = dict(token="hnfjicnednnfkwen", username=USERNAME, agreeTermsOfService="yes", notMinor="yes",
+TOKEN = "TOKEN"
+parameters = dict(token=TOKEN, username=USERNAME, agreeTermsOfService="yes", notMinor="yes",
                   thanksCode="thanks-code")
 graph_config = {
     "id": "graph1",
@@ -17,11 +21,11 @@ graph_config = {
 header = {
     "X-USER-TOKEN": TOKEN
 }
-#create a user
+#To create a user
 # results = requests.post(url=pixela_endpoint, json=parameters)
 # print(results.text)
 
-#create a graph
+#To create a graph 
 # graph_definition = f"{pixela_endpoint}/{USERNAME}/graphs"
 # response = requests.post(url=graph_definition, json=graph_config, headers=header)
 
