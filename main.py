@@ -1,7 +1,3 @@
-#Firstly create a graph on pixela
-#API Doc: "https://docs.pixe.la"
-
-
 import requests
 import datetime
 pixela_endpoint = "https://pixe.la/v1/users"
@@ -30,7 +26,7 @@ header = {
 # response = requests.post(url=graph_definition, json=graph_config, headers=header)
 
 dt = datetime.datetime.now()
-#convert date to pure string.
+# TO convert date to pure string.
 today = (dt.strftime("%Y%m%d"))
 
 
@@ -39,11 +35,11 @@ body = {
     "quantity": "20"
 }
 
-#post on the graph today.
+#To post on the graph today.
 post_ENDPOINT = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH1}"
 post_graph = requests.post(url=post_ENDPOINT, json=body, headers=header)
 
-# update the graph
+#To update the graph
 update_endpoint2 = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH1}/{today}"
 
 request_body = {
@@ -53,8 +49,6 @@ request_body = {
 response = requests.put(url=update_endpoint2, json=request_body, headers=header)
 
 #delete a request
-
-
 delete_endpoint = f"{pixela_endpoint}/{USERNAME}/graphs/{GRAPH1}/{today}"
 delete_pixel = requests.delete(url=delete_endpoint, json=request_body, headers=header)
 print(delete_pixel.text)
